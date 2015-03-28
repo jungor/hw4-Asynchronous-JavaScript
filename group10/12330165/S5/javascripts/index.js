@@ -34,7 +34,7 @@ window.onload = function() {
     }
 
     var aHandler = function(Sum) {
-        var current = this;
+        var current = aHandler;
         var that = list[0];
         var currentSum;
         if (arguments.callee.length != arguments.length) {
@@ -51,22 +51,20 @@ window.onload = function() {
         }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                currentSum += parseInt(xmlhttp.responseText);
-                var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
-                that.innerHTML = that.innerHTML + ih;
-                document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "这是个天大的秘密";
-                that.style.backgroundColor = "rgba(0,0,10,.4)";
-                that.onclick = null;
-                check();
-                current.next(currentSum);
-            }
-            else
-            {
-                if (aHandler.caller.arguments.length != 0) {
-                    var message = "这不是个天大的秘密";
-                    console.log(aHandler.caller.toString());
-                    aHandler.caller(message, currentSum);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    currentSum += parseInt(xmlhttp.responseText);
+                    var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
+                    that.innerHTML = that.innerHTML + ih;
+                    document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "这是个天大的秘密";
+                    that.style.backgroundColor = "rgba(0,0,10,.4)";
+                    that.onclick = null;
+                    check();
+                    current.next(currentSum);
+                }
+                else {
+                        var message = "这不是个天大的秘密";
+                        aHandler.caller(message, currentSum);
                 }
             }
         }
@@ -75,7 +73,7 @@ window.onload = function() {
     }
 
     var bHandler = function(Sum) {
-        var current = this;
+        var current = bHandler;
         var that = list[1];
         var currentSum;
         if (arguments.callee.length != arguments.length) {
@@ -92,21 +90,20 @@ window.onload = function() {
         }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                currentSum += parseInt(xmlhttp.responseText);
-                var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
-                that.innerHTML = that.innerHTML + ih;
-                document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "我不知道";
-                that.style.backgroundColor = "rgba(0,0,10,.4)";
-                that.onclick = null;
-                check();
-                current.next(currentSum);
-            }
-            else
-            {
-                if (bHandler.caller.arguments.length != 0) {
-                    var message = "我知道";
-                    bHandler.caller(message, currentSum);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    currentSum += parseInt(xmlhttp.responseText);
+                    var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
+                    that.innerHTML = that.innerHTML + ih;
+                    document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "我不知道";
+                    that.style.backgroundColor = "rgba(0,0,10,.4)";
+                    that.onclick = null;
+                    check();
+                    current.next(currentSum);
+                }
+                else {
+                        var message = "我知道";
+                        bHandler.caller(message, currentSum);
                 }
             }
         }
@@ -114,7 +111,7 @@ window.onload = function() {
         xmlhttp.send();
     }
     var cHandler = function(Sum) {
-        var current = this;
+        var current = cHandler;
         var that = list[2];
         var currentSum;
         if (arguments.callee.length != arguments.length) {
@@ -131,21 +128,21 @@ window.onload = function() {
         }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                currentSum += parseInt(xmlhttp.responseText);
-                var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
-                that.innerHTML = that.innerHTML + ih;
-                document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "你不知道";
-                that.style.backgroundColor = "rgba(0,0,10,.4)";
-                that.onclick = null;
-                check();
-                current.next(currentSum);
-            }
-            else
-            {
-                if (cHandler.caller.arguments.length != 0) {
-                    var message = "你知道";
-                    cHandler.caller(message, currentSum);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    currentSum += parseInt(xmlhttp.responseText);
+                    var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
+                    that.innerHTML = that.innerHTML + ih;
+                    document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "你不知道";
+                    that.style.backgroundColor = "rgba(0,0,10,.4)";
+                    that.onclick = null;
+                    check();
+                    current.next(currentSum);
+                }
+                else {
+
+                        var message = "你知道";
+                        cHandler.caller(message, currentSum);
                 }
             }
         }
@@ -153,7 +150,7 @@ window.onload = function() {
         xmlhttp.send();
     }
     var dHandler = function(Sum) {
-        var current = this;
+        var current = dHandler;
         var that = list[3];
         var currentSum;
         if (arguments.callee.length != arguments.length) {
@@ -170,21 +167,21 @@ window.onload = function() {
         }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                currentSum += parseInt(xmlhttp.responseText);
-                var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
-                that.innerHTML = that.innerHTML + ih;
-                document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "他不知道";
-                that.style.backgroundColor = "rgba(0,0,10,.4)";
-                that.onclick = null;
-                check();
-                current.next(currentSum);
-            }
-            else
-            {
-                if (dHandler.caller.arguments.length != 0) {
-                    var message = "他知道";
-                    dHandler.caller(message, currentSum);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    currentSum += parseInt(xmlhttp.responseText);
+                    var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
+                    that.innerHTML = that.innerHTML + ih;
+                    document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "他不知道";
+                    that.style.backgroundColor = "rgba(0,0,10,.4)";
+                    that.onclick = null;
+                    check();
+                    current.next(currentSum);
+                }
+                else {
+
+                        var message = "他知道";
+                        dHandler.caller(message, currentSum);
                 }
             }
         }
@@ -192,7 +189,7 @@ window.onload = function() {
         xmlhttp.send();
     }
     var eHandler = function(Sum) {
-        var current = this;
+        var current = eHandler;
         var that = list[4];
         var currentSum;
         if (arguments.callee.length != arguments.length) {
@@ -209,21 +206,20 @@ window.onload = function() {
         }
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                currentSum += parseInt(xmlhttp.responseText);
-                var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
-                that.innerHTML = that.innerHTML + ih;
-                document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "才怪";
-                that.style.backgroundColor = "rgba(0,0,10,.4)";
-                that.onclick = null;
-                check();
-                current.next(currentSum);
-            }
-            else
-            {
-                if (eHandler.caller.arguments.length != 0) {
-                    var message = "才不怪";
-                    eHandler.caller(message, currentSum);
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                    currentSum += parseInt(xmlhttp.responseText);
+                    var ih = "<span class='unread'>" + xmlhttp.responseText + "</span>";
+                    that.innerHTML = that.innerHTML + ih;
+                    document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = "才怪";
+                    that.style.backgroundColor = "rgba(0,0,10,.4)";
+                    that.onclick = null;
+                    check();
+                    current.next(currentSum);
+                }
+                else {
+                        var message = "才不怪";
+                        eHandler.caller(message, currentSum);
                 }
             }
         }
@@ -233,7 +229,7 @@ window.onload = function() {
 
     var bubbleHandler = function(currentSum) {
         document.getElementById("info-bar").style.backgroundColor = "blue";
-        document.getElementById("info-bar").getElementsByTagName("span")[1].innerHTML = currentSum;
+        document.getElementById("info-bar").getElementsByTagName("span")[1].innerHTML = "楼主异步调用战斗力感人，目测不超过" + currentSum;
         document.getElementById("info-bar").style.backgroundColor = "rgba(0,0,10,.4)";
     }
 
@@ -278,42 +274,83 @@ window.onload = function() {
     }
 
     document.getElementsByClassName("apb")[0].onclick = function() {
-        if (arguments.callee.length != arguments.length) {
-            console.log("hello");
-        }
         var arr = [0, 1, 2, 3, 4];
         arr = randArray(arr);
         var str = new Array();
+
+        var now, first;
+
         for (var j = 0; j < arr.length; j++) {
             if (arr[j] == 0) {
                 str.push("A");
+                if (j == 0) {
+                    now = aHandler;
+                    first = aHandler;
+                } else {
+                    now.next = aHandler;
+                    now = aHandler;
+                }
+
                 continue;
             }
             if (arr[j] == 1) {
                 str.push("B");
+                if (j == 0) {
+                    now = bHandler;
+                    first = bHandler;
+                } else {
+                    now.next = bHandler;
+                    now = bHandler;
+                }
+
                 continue;
             }
             if (arr[j] == 2) {
                 str.push("C");
+                if (j == 0) {
+                    now = cHandler;
+                    first = cHandler;
+                } else {
+                    now.next = cHandler;
+                    now = cHandler;
+                }
+
                 continue;
             }
             if (arr[j] == 3) {
                 str.push("D");
+                if (j == 0) {
+                    now = dHandler;
+                    first = dHandler;
+                } else {
+                    now.next = dHandler;
+                    now = dHandler;
+                }
+
                 continue;
             }
             if (arr[j] == 4) {
                 str.push("E");
+                if (j == 0) {
+                    now = eHandler;
+                    first = eHandler;
+                } else {
+                    now.next = eHandler;
+                    now = eHandler;
+                }
+
                 continue;
             }
         }
+
+        now.next = bubbleHandler;
+
+
+        first(0);
+
         document.getElementById("info-bar").getElementsByTagName("span")[0].innerHTML = str;
-        var func = [aHandler, bHandler, cHandler, dHandler, eHandler];
 
-        for (var i = 0; i < arr.length-1; i++) {
-            func[arr[i]].next = func[arr[i+1]];
-        }
 
-        func[0]();
 
     }
 
