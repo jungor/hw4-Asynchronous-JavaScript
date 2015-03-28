@@ -97,6 +97,7 @@ function SumHandle(BigBubble) {
 	}
 	document.getElementById('Sum').innerHTML = String(sum);
 	BigBubble.style.background = 'gray';
+	BigBubble.onclick = null;
 }
 
 function Shuffle(array) {
